@@ -1,4 +1,4 @@
-package com.example.expensetracker.core.network
+package com.example.expensetracker.core.domain.network
 
 import com.example.expensetracker.core.domain.model.Expense
 

@@ -1,0 +1,76 @@
+# Sample GraphQL Schema for Expense Tracker App
+# This demonstrates the server-driven UI approach mentioned in the project description
+
+type Query {
+  expenses: [Expense!]!
+  expense(id: ID!): Expense
+  categories: [Category!]!
+  reports: Reports!
+}
+
+type Mutation {
+  addExpense(input: ExpenseInput!): Expense!
+  updateExpense(id: ID!, input: ExpenseInput!): Expense!
+  deleteExpense(id: ID!): Boolean!
+  addCategory(input: CategoryInput!): Category!
+}
+
+type Expense {
+  id: ID!
+  title: String!
+  amount: Float!
+  category: String!
+  description: String
+  date: String!
+  isIncome: Boolean!
+  createdAt: String!
+  updatedAt: String!
+}
+
+input ExpenseInput {
+  title: String!
+  amount: Float!
+  category: String!
+  description: String
+  date: String!
+  isIncome: Boolean!
+}
+
+type Category {
+  id: ID!
+  name: String!
+  color: String!
+  icon: String!
+}
+
+input CategoryInput {
+  name: String!
+  color: String!
+  icon: String!
+}
+
+type Reports {
+  monthlySummary: MonthlySummary!
+  categoryBreakdown: [CategoryBreakdown!]!
+  monthlyTrend: [MonthlyData!]!
+}
+
+type MonthlySummary {
+  totalIncome: Float!
+  totalExpenses: Float!
+  netSavings: Float!
+  month: String!
+}
+
+type CategoryBreakdown {
+  category: String!
+  amount: Float!
+  percentage: Float!
+}
+
+type MonthlyData {
+  month: String!
+  income: Float!
+  expenses: Float!
+  savings: Float!
+} 

@@ -1,28 +1,20 @@
 package com.example.expensetracker.core.network.di
 
-import com.example.expensetracker.core.domain.repository.ExpenseRepository
-import com.example.expensetracker.core.data.repository.ExpenseRepositoryImpl
-import com.example.expensetracker.core.network.ExpenseApi
+import com.example.expensetracker.core.domain.network.ExpenseApi
 import com.example.expensetracker.core.network.ExpenseApiImpl
-import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class NetworkModule {
+object NetworkModule {
 
-    @Binds
+    @Provides
     @Singleton
-    abstract fun bindExpenseApi(
+    fun provideExpenseApi(
         expenseApiImpl: ExpenseApiImpl
-    ): ExpenseApi
-
-    @Binds
-    @Singleton
-    abstract fun bindExpenseRepository(
-        expenseRepositoryImpl: ExpenseRepositoryImpl
-    ): ExpenseRepository
+    ): ExpenseApi = expenseApiImpl
 } 

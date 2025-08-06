@@ -1,7 +1,7 @@
 package com.example.expensetracker.core.network
 
 import com.example.expensetracker.core.domain.model.Expense
-import com.example.expensetracker.core.domain.model.Category
+import com.example.expensetracker.core.domain.network.ExpenseApi
 import java.util.Date
 import javax.inject.Inject
 

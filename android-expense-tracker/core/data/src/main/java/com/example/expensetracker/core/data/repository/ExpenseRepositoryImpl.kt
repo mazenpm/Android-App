@@ -1,8 +1,8 @@
 package com.example.expensetracker.core.data.repository
 
 import com.example.expensetracker.core.domain.model.Expense
+import com.example.expensetracker.core.domain.network.ExpenseApi
 import com.example.expensetracker.core.domain.repository.ExpenseRepository
-import com.example.expensetracker.core.network.ExpenseApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject

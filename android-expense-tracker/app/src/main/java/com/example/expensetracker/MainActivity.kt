@@ -28,14 +28,14 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ExpenseTrackerTheme {
-                ExpenseTrackerApp()
+                ExpenseTrackerAppContent()
             }
         }
     }
 }
 
 @Composable
-fun ExpenseTrackerApp() {
+fun ExpenseTrackerAppContent() {
     val navController = rememberNavController()
     
     Scaffold(
